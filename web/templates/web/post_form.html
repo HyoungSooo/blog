@@ -1,0 +1,48 @@
+<!-- [A] base 템플릿을 상속 합니다.-->
+{% load static %}
+
+<!-- [B] content 블럭 처리 -->
+{% block content %}
+    <div class="wrap-post">
+        <form method="post">{% csrf_token %}
+            <div class="editor">
+
+                <div class="input input-date">
+                    <p>날짜</p>
+                    {{form.dt_created}}
+                </div>
+
+                <div class="input input-score">
+                    <p>카테고리</p>
+                    <!-- [D] 감정 점수 입력 form-->
+                    {{form.type}}
+                    {% for error in form.type.errors %}
+                        <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+
+                <div class="input input-title">
+                    <p>제목</p>
+                    <!-- [E] 제목 입력 form-->
+                    {{form.title}}
+                    
+                    {% for error in form.title.errors %}
+                        <span>{{error}}</span>  
+                    {% endfor %}
+                </div>
+
+                <!-- [G] 일기 내용 입력 form-->
+                {{form.content}}
+                {% for error in form.content.errors  %}
+                    <span>{{error}}</span>
+                {% endfor %}
+
+                <div class="post-btn">
+                    <input type="submit" value="작성완료">
+                </div>
+                
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+<!-- [B] content 블럭 처리 -->

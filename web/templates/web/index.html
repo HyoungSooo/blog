@@ -1,49 +1,29 @@
+{% extends './base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
-  <title>CS Blog</title>
-</head>
-<body>
-  <div class="navbar__fixed">
-    <header>
-      <div class="navbar">
-        <a href="#"><span class="navbar__text">공부방</span></a>
-      </div>
-      <div>
-        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
-      </div>
-      </header>
-      <div class="category pc">
-        <span>
-          <a href="#">python</a>
-        </span>
-        <span>
-          <a href="#">Javascirpt</a>
-        </span>
-        <span>
-          <a href="#">Html</a>
-        </span>
-        <span>
-          <a href="#">Css</a>
-        </span>
-        <span>
-          <a href="#">django</a>
-        </span>
-        <span>
-          <a href="#">React</a>
-        </span>
-      </div>
+{% block content %}
+<div class="wrap-note">
+    <div class="note">         
+        <div class="note-list">
+            <ul>
+                {% for obj in object_list %}
+                <li>
+                    <a href="#">
+                        <div class="date">
+                            <span>{{obj.dt_created|date:"d"}}</span>
+                            <p>{{obj.dt_created|date:"M"}}</p>
+                        </div>
+                        <h2>{{obj.title}}</h2>
+                        <div class="score">
+                            <span>{{obj.type}}</span>
+                        </div>
+                        <div class = 'description'>
+                          <span>{{obj.description}}</span>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-
-    <div class='content'>
-      {% block content %}
-      {% endblock content %}
-    </div>
-  <script src="https://kit.fontawesome.com/99c58dc767.js" crossorigin="anonymous"></script>
-</body>
-</html> 
+</div>
+{% endblock content %}
