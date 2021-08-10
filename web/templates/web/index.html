@@ -1,21 +1,25 @@
 {% extends './base.html' %}
 {% load static %}
 {% block content %}
-  <div class="note-list">
+  <div class="content">
     <ul>
       {% for obj in object_list %}
         <li>
           <a href="#">
-            <div class="date">
-              <span>{{obj.dt_created|date:"d"}}</span>
-              <p>{{obj.dt_created|date:"M"}}</p>
-            </div>
-            <h2>{{obj.title}}</h2>
-            <div class="score">
-              <span>{{obj.type}}</span>
-            </div>
-            <div class='description'>
-              <span>{{obj.description}}</span>
+            <h2 class='content__title'>{{obj.title}}</h2>
+            <div class='content-title__box'>
+              <div class="description">
+                <span class='content__category'>category :
+                  {{obj.type}}
+                </span>
+                <div class='content__description'>
+                  <p>{{obj.description}}</p>
+                </div>
+              </div>
+              <div class="content__date">
+                <span>{{obj.dt_created|date:"M"}}
+                  {{obj.dt_created|date:"d"}}</span>
+              </div>
             </div>
           </a>
         </li>

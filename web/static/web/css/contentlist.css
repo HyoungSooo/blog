@@ -1,0 +1,31 @@
+.content {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+.content li {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid white;
+}
+
+.content__title{
+  font-weight: 600;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.content-title__box {
+  display: flex;
+  justify-content: space-between;
+  height: 5%;
+}
+
+.content__date {
+  display: flex;
+  align-items: flex-end;
+}
+
+.content__description {
+  margin-top: 10px;
+}
