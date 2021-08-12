@@ -5,7 +5,7 @@
     <ul>
       {% for obj in object_list %}
         <li>
-          <a href="#">
+          <a href={% url 'post-detail' obj.id %}>
             <h2 class='content__title'>{{obj.title}}</h2>
             <div class='content-title__box'>
               <div class="description">

@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+
+{% block content %}
+  <div class="text-box">
+    <h2 class='post-detail__title'>{{object.title}}</h2>
+    <div class="score">
+      <div class='post-detail__date'>
+        <span>{{object.dt_created|date:"d"}}</span>
+        <span class="month">{{object.dt_created|date:"M"}}</span>
+        <span class="year">{{object.dt_created|date:"Y"}}</span>
+      </div>
+      <div>
+        <span>Category :
+        </span>
+        <span>{{object.type}}</span>
+      </div>
+    </div>
+    <div class="post-detail__content">
+      <p>{{object.content|linebreaksbr}}</p>
+    </div>
+  </div>
+{% endblock content %}

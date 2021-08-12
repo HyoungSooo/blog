@@ -19,3 +19,8 @@ def page_create(request):
     else:
         post_form = PostForm()
     return render(request, 'web/post_form.html', {'form': post_form})
+
+
+def post_detail(request, post_id):
+    object = Post.objects.get(id=post_id)
+    return render(request, 'web/post_detail.html', {'object': object})

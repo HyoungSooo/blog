@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static 'startpage/css/style.css' %}>
+    <title>khs.kr</title>
+  </head>
+
+  <body>
+    <div class='introduce'>
+      <div>
+        <a class='introduce-nav__link' href={% url 'introduce' %}>
+          <p class='introduce-nav__title'>khs.kr</p>
+        </a>
+      </div>
+      <div class='introduce-nav__post-list'>
+        <a href="#">About</a>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='container__about-me'>
+        <img class='container__img' src={% static 'startpage/images/1.jpg' %} alt="">
+        <span>KimHyoungSoo</span>
+        <span>
+          College student
+        </span>
+        <a href="#">
+          <i class="fab fa-github-square fa-2x"></i>
+        </a>
+      </div>
+      <div class='container__contents'>
+        <div class='container__contents__recent'>
+          <span class='container__contents__title'>Recent post</span>
+          <a class='container__contents__link' href={% url 'index' %}>
+            <span>View all Posts</span></a>
+          <div class="content">
+            {% for obj in obj %}
+              <div class='content__box'>
+                <a href={% url 'post-detail' obj.id %}>
+                  <h2 class='content__title'>{{obj.title}}</h2>
+                  <div class='content-title__box'>
+                    <div class="description">
+                      <span class='content__category'>category :
+                        {{obj.type}}
+                      </span>
+                      <div class='content__description'>
+                        <p>{{obj.description}}</p>
+                      </div>
+                    </div>
+                    <div class="content__date">
+                      <span>{{obj.dt_created|date:"M"}}
+                        {{obj.dt_created|date:"d"}}</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="projects">
+          <p>Projects</p>
+        </div>
+      </div>
+      <script src="https://kit.fontawesome.com/99c58dc767.js" crossorigin="anonymous"></script>
+    </body>
+
+  </html>
