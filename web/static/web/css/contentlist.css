@@ -1,10 +1,16 @@
-.content {
+.content{
   width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.content__box {
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
 
 }
-.content li {
+.content__box li {
   padding: 10px;
   margin-bottom: 20px;
   border-bottom: 1px solid white;
@@ -29,3 +35,8 @@
 .content__description {
   margin-top: 10px;
 }
+
+.content a:hover{
+  color: rgba(255, 255, 255, 0.7);
+}
+

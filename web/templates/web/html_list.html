@@ -3,7 +3,7 @@
 {% block content %}
   <div class="content__box">
     <ul>
-      {% for obj in object_list %}
+      {% for obj in object %}
         <li>
           <a href={% url 'post-detail' obj.id %}>
             <h2 class='content__title'>{{obj.title}}</h2>

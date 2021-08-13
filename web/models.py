@@ -3,7 +3,7 @@ from django.db import models
 
 LANG_TYPE = {
     ('python', 'python'),
-    ('javascipt', 'javascipt'),
+    ('javascript', 'javascript'),
     ('html', 'html'),
     ('css', 'css'),
     ('react', 'react'),
