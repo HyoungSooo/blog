@@ -45,6 +45,19 @@ INSTALLED_APPS = [
     'web',
     'startpage',
 ]
+INSTALLED_APPS += ('django_summernote', )
+
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        'width': '100%',
+        'height': '720',
+
+        'codemirror': {
+            'mode': 'htmlmixed',
+            'lineNumbers': 'true',
+        }
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,6 +70,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'toyproj.urls'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 TEMPLATES = [
     {
