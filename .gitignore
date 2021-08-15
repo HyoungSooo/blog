@@ -1,3 +1,10 @@
 settings.json
 Secrets.json
 .vscode
+*.pyc
+*~
+__pycache__
+myvenv
+db.sqlite3
+/static
+.DS_Store
