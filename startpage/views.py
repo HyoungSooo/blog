@@ -9,7 +9,10 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
 
 def introduce(request):
-    object = Post.objects.all()
-    p = len(object)
-    object_sub = object[p-3:p]
+    object = Post.objects.order_by('-dt_created')
+    object_sub = object[:3]
     return render(request, 'startpage/index.html', {'obj': object_sub})
+
+
+def about(request):
+    return render(request, 'startpage/about.html')

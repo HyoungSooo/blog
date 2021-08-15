@@ -21,7 +21,7 @@ from django.conf import settings
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('rudrleogkrry/', admin.site.urls),
     path('', include('web.urls')),
     path('summernote/', include('django_summernote.urls')),
 ]

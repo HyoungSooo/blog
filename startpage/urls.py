@@ -20,4 +20,5 @@ from . import views
 
 urlpatterns = [
     path('', views.introduce, name='introduce'),
+    path('about/', views.about, name='about'),
 ]

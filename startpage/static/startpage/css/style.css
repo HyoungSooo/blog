@@ -1,9 +1,10 @@
-@import './reset.css';
+@import "./reset.css";
 
 body {
   background-color: black;
   color: white;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 a {
   text-decoration: none;
@@ -23,19 +24,22 @@ a {
   padding: 20px 100px;
   border-bottom: 1px solid white;
 }
-.introduce-nav__post-list a{
+.introduce-nav__post-list a {
   margin-left: 10px;
   font-size: 15px;
 }
-.introduce-nav__title{
+.introduce-nav__title {
   font-size: 25px;
 }
-.container{
+.container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: row;
   margin-top: 50px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .container__about-me {
   display: flex;
@@ -45,17 +49,17 @@ a {
   align-items: center;
 }
 
-.container__about-me span{
+.container__about-me span {
   margin-top: 10px;
 }
 
-.container__contents{
+.container__contents {
   width: 70%;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
-.container__img{
+.container__img {
   display: block;
   width: 150px;
   height: 150px;
@@ -76,12 +80,12 @@ a {
   transition: all 0.5s ease-in-out;
   border-radius: 10px;
 }
-.container__contents__link:hover{
+.container__contents__link:hover {
   background-color: white;
   color: black;
 }
 
-.container__contents__recent{
+.container__contents__recent {
   width: 100%;
 }
 
@@ -91,7 +95,7 @@ a {
   border-bottom: 1px solid white;
 }
 
-.content__title{
+.content__title {
   font-weight: 600;
   font-size: 25px;
   margin-bottom: 20px;
@@ -115,11 +119,41 @@ a {
 .content {
   margin-right: 100px;
 }
-.content__box a:hover{
+.content__box a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
 .projects {
   font-size: 30px;
   margin-top: 50px;
+}
+
+.about-me {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 105px;
+}
+
+.about-me__title {
+  font-weight: 900;
+  margin-bottom: 10px;
+  font-size: 25px;
+  margin-top: 20px;
+}
+.about-me__sub-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+ul {
+  margin: 10px 0;
+  margin-bottom: 20px;
+}
+.about-me p {
+  padding: 5px 0px;
+}
+li {
+  padding: 5px 0px;
 }

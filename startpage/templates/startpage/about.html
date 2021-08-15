@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static 'startpage/css/style.css' %}>
+    <title>khs.kr</title>
+  </head>
+
+  <body>
+    <div class='introduce'>
+      <div>
+        <a class='introduce-nav__link' href={% url 'introduce' %}>
+          <p class='introduce-nav__title'>khs.kr</p>
+        </a>
+      </div>
+      <div class='introduce-nav__post-list'>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='container__about-me'>
+        <img class='container__img' src={% static 'startpage/images/1.jpg' %} alt="">
+        <span>KimHyoungSoo</span>
+        <span>
+          College student
+        </span>
+        <a href="https://github.com/HyoungSooo">
+          <i class="fab fa-github-square fa-2x"></i>
+        </a>
+      </div>
+    </div>
+    <div class='about-me'>
+      <p class="about-me__title">개요</p>
+      <p class="about-me__sub-title">소개</p>
+      <p class="about-me__content">파이썬과 장고를 활용한 웹 개발자를 희망합니다. 백엔드는 장고, 프론트엔드는 React.js를 활용해서 개발에 활용할것입니다.</p>
+      <p class='about-me__content'>이 사이트에는 장고와 React위주의 글을 게시할 예정입니다.</p>
+      <p class='about-me__sub-title'>사용 기술</p>
+      <ul>
+        <li>언어 : Python, Javascript</li>
+        <li>프레임워크 : Django, React.js</li>
+        <li>선호도구 : git, vscode</li>
+      </ul>
+      <p class='about-me__title'>학력</p>
+      <p class='about-me__content'>2018 ~ / 경기대학교</p>
+      <p class='about-me__title'>관심있는 분야</p>
+      <p class='about-me__sub-title'>API서버 애플리케이션 개발</p>
+      <p class='about-me__content'>django의 Rest API구현 라이브러리인 DjangoRestFramework를 사용하여 최대한 준수한 형식의 API를 개발하는 것입니다.</p>
+      <p class='about-me__sub-title'>React.js를 활용한 프론트엔드 개발</p>
+      <p class='about-me__content'>ES5를 활용합니다</p>
+      <p class='about-me__content'>Javascript에 대한 이해도는 아직 낮은 편이지만 Javascript를 활용한 간단한 웹 애플리케이션을 만들수 있습니다.</p>
+
+    </div>
+    <script src="https://kit.fontawesome.com/99c58dc767.js" crossorigin="anonymous"></script>
+
+    <body></html>

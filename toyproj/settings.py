@@ -17,7 +17,7 @@ import json
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRETS_PATH = os.path.join(
-    ROOT_DIR, '/home/aaa57403/gudtn/toyproj/.vscode/Secrets.json')
+    ROOT_DIR, "/home/aaa57403/Hyoungsoo/blog/.vscode/Secrets.json")
 
 # json 파일을 python 객체로 변환
 secrets = json.loads(open(SECRETS_PATH).read())
