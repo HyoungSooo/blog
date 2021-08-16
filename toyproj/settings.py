@@ -28,9 +28,9 @@ for key, value in secrets.items():
     setattr(sys.modules[__name__], key, value)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
