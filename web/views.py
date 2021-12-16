@@ -1,28 +1,27 @@
 from django.shortcuts import render, redirect
+from django.views.generic import CreateView
 from .forms import PostForm
 from .models import Post
-import json
-
+from .forms import PostForm
+from django.urls import reverse
 # Create your views here.
 
 
 def index(request):
-    object_list = Post.objects.all()
+    object_list = Post.objects.all().order_by('-dt_created')
     context = {
-        'object_list': object_list
+        'object': object_list
     }
     return render(request, 'web/index.html', context)
 
 
-def page_create(request):
-    if request.method == 'POST':
-        post_form = PostForm(request.POST)
-        if post_form.is_valid():
-            new_diary = post_form.save()
-            return redirect('index')
-    else:
-        post_form = PostForm()
-    return render(request, 'web/post_form.html', {'form': post_form})
+class PageCreate(CreateView):
+    model = Post
+    template_name = 'web/post_create.html'
+    form_class = PostForm
+
+    def get_success_url(self) -> str:
+        return reverse('index')
 
 
 def post_detail(request, post_id):
@@ -38,7 +37,7 @@ def javascript_list(request):
     context = {
         'object': object
     }
-    return render(request, 'web/javascript_list.html', context)
+    return render(request, 'web/index.html', context)
 
 
 def html_list(request):
@@ -46,7 +45,7 @@ def html_list(request):
     context = {
         'object': object
     }
-    return render(request, 'web/html_list.html', context)
+    return render(request, 'web/index.html', context)
 
 
 def css_list(request):
@@ -54,7 +53,7 @@ def css_list(request):
     context = {
         'object': object
     }
-    return render(request, 'web/css_list.html', context)
+    return render(request, 'web/index.html', context)
 
 
 def django_list(request):
@@ -62,7 +61,7 @@ def django_list(request):
     context = {
         'object': object
     }
-    return render(request, 'web/django_list.html', context)
+    return render(request, 'web/index.html', context)
 
 
 def react_list(request):
@@ -70,7 +69,7 @@ def react_list(request):
     context = {
         'object': object
     }
-    return render(request, 'web/react_list.html', context)
+    return render(request, 'web/index.html', context)
 
 
 def python_list(request):
@@ -78,4 +77,20 @@ def python_list(request):
     context = {
         'object': object
     }
-    return render(request, 'web/python_list.html', context)
+    return render(request, 'web/index.html', context)
+
+
+def DB_list(request):
+    object = Post.objects.filter(type='DB')
+    context = {
+        'object': object
+    }
+    return render(request, 'web/index.html', context)
+
+
+def algorithm_list(request):
+    object = Post.objects.filter(type='algorithm')
+    context = {
+        'object': object
+    }
+    return render(request, 'web/index.html', context)

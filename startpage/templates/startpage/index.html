@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href={% static 'startpage/css/style.css' %}>
+    <link rel="stylesheet" href={% static 'startpage/css/style2.css' %}>
     <title>khs.kr</title>
   </head>
 
@@ -20,6 +20,13 @@
       </div>
       <div class='introduce-nav__post-list'>
         <a href={% url 'about' %}>About</a>
+
+        {% if user.is_authenticated %}
+          <a href={% url 'account_logout' %}>logout</a>
+        {% else %}
+          <a href={% url 'account_login' %}>login</a>
+        {% endif %}
+
       </div>
     </div>
     <div class='container'>
@@ -38,6 +45,11 @@
           <span class='container__contents__title'>Recent post</span>
           <a class='container__contents__link' href={% url 'index' %}>
             <span>View all Posts</span></a>
+          {% if user.is_authenticated %}
+            <a class='container__contents__link' href={% url 'post-create'%}>
+              <span>Create Post</span></a>
+          {% endif %}
+
           <div class="content">
             {% for obj in obj %}
               <div class='content__box'>

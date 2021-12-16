@@ -2,19 +2,21 @@
   font-size: 40px;
   font-weight: 600;
 }
-.score{
+.score {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
-.post-detail__date span{
+.post-detail__date span {
   margin-right: 1px;
   color: rgba(255, 255, 255, 0.5);
 }
-.post-detail__content{
+.post-detail__content {
   margin: 50px 0px;
 }
-
+.post-detail__content p {
+  margin-bottom: 5px;
+}
 .text-box {
   padding-bottom: 40px;
   border-bottom: 1px solid white;

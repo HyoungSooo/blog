@@ -1,24 +1,22 @@
-.content{
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+.content {
+  width: 79%;
+  padding-left: 100px;
+  padding-right: 100px;
   margin-top: 20px;
 }
 .content__box {
-  width: 90%;
+  width: 100%;
   margin-right: auto;
-  margin-left: auto;
-
 }
 .content__box li {
-  padding: 10px;
+  padding: 10px 0px;
   margin-bottom: 20px;
   border-bottom: 1px solid white;
 }
 
-.content__title{
+.content__title {
   font-weight: 600;
-  font-size: 36px;
+  font-size: 25px;
   margin-bottom: 20px;
 }
 .content-title__box {
@@ -30,13 +28,18 @@
 .content__date {
   display: flex;
   align-items: flex-end;
+  font-weight: 300;
 }
 
 .content__description {
   margin-top: 10px;
+  font-weight: 300;
 }
 
-.content a:hover{
+.content a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.content__category {
+  font-weight: 300;
+}

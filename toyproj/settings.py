@@ -44,13 +44,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'web',
     'startpage',
+    'django_seed',
+    'disqus',
 ]
 INSTALLED_APPS += ('django_summernote', )
 
 SUMMERNOTE_CONFIG = {
     'summernote': {
-        'width': '100%',
-        'height': '720',
+        'width': '720',
+        'height': '460',
 
         'codemirror': {
             'mode': 'htmlmixed',
@@ -77,7 +79,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'templates', 'blog')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,3 +144,37 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+# Auth Settings
+
+AUTH_USER_MODEL = 'web.Super_User'
+
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+INSTALLED_APPS += [
+    # The following apps are required:
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+]
+SITE_ID = 1
+
+# Email Settings
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_ON_GET = True
+
+
+# disqus
+DISQUS_WEBSITE_SHORTNAME = 'Hyoungsoocsblog'

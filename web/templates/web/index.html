@@ -2,8 +2,17 @@
 {% load static %}
 {% block content %}
   <div class="content__box">
+    <div class='content_select_box_container'>
+      <a class="content_select_box" href={% url 'index' %}>All post</a>
+      <a class="content_select_box" href={% url 'python_list' %}>python</a>
+      <a class="content_select_box" href={% url 'html_list' %}>html</a>
+      <a class="content_select_box" href={% url 'css_list' %}>css</a>
+      <a class="content_select_box" href={% url 'DB_list' %}>DB</a>
+      <a class="content_select_box" href={% url 'django_list' %}>django</a>
+      <a class="content_select_box" href={% url 'algorithm_list' %}>algorithm</a>
+    </div>
     <ul>
-      {% for obj in object_list %}
+      {% for obj in object %}
         <li>
           <a href={% url 'post-detail' obj.id %}>
             <h2 class='content__title'>{{obj.title}}</h2>

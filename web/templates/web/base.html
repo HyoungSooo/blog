@@ -11,31 +11,22 @@
   </head>
 
   <body>
-    <div class="category pc">
-      <span>
-        <a href={% url 'introduce' %}>Home</a>
-      </span>
-      <span class='python'>
-        <a href={% url 'python_list' %}>python</a>
-      </span>
-      <span class='javascript'>
-        <a href={% url 'javascript_list' %}>javascript</a>
-      </span>
-      <span class='html'>
-        <a href={% url 'html_list' %}>html</a>
-      </span>
-      <span class='css'>
-        <a href={% url 'css_list' %}>css</a>
-      </span>
-      <span class='django'>
-        <a href={% url 'django_list' %}>django</a>
-      </span>
-      <span class='react'>
-        <a href={% url 'react_list' %}>react</a>
-      </span>
-      <span class='all'>
-        <a href={% url 'index' %}>all</a>
-      </span>
+    <div class='introduce'>
+      <div>
+        <a class='introduce-nav__link' href={% url 'introduce' %}>
+          <p class='introduce-nav__title'>khs.kr</p>
+        </a>
+      </div>
+      <div class='introduce-nav__post-list'>
+        <a href={% url 'about' %}>About</a>
+
+        {% if user.is_authenticated %}
+          <a href={% url 'account_logout' %}>logout</a>
+        {% else %}
+          <a href={% url 'account_login' %}>login</a>
+        {% endif %}
+
+      </div>
     </div>
     <div class='content'>
       {% block content %}{% endblock content %}
