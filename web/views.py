@@ -1,14 +1,19 @@
+from django.core import paginator
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView
 from .forms import PostForm
 from .models import Post
 from .forms import PostForm
 from django.urls import reverse
+from django.core.paginator import Paginator
 # Create your views here.
 
 
 def index(request):
-    object_list = Post.objects.all().order_by('-dt_created')
+    post_list = Post.objects.all().order_by('-dt_created')
+    page = int(request.GET.get('p', 1))
+    paginator = Paginator(post_list, 10)
+    object_list = paginator.get_page(page)
     context = {
         'object': object_list
     }

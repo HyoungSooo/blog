@@ -35,4 +35,33 @@
       {% endfor %}
     </ul>
   </div>
+  <div>
+    <div class='page_ul_container'>
+      <ul class='page_container'>
+        {% if object.has_previous %}
+          <li>
+            <a href="?p={{object.previous_page_number}}">previous</a>
+          </li>
+        {% else %}
+          <li>
+            <a href="#" onclick="javascript:window.scrollTo(0,0)">top</a>
+
+          </li>
+        {% endif %}
+        <li>
+          <a href="#">{{object.number}}/{{object.paginator.num_pages}}</a>
+        </li>
+        {% if object.has_next %}
+          <li>
+            <a href="?p={{object.next_page_number}}">next</a>
+          </li>
+        {% else %}
+          <li>
+            <a href="#" onclick="javascript:window.scrollTo(0,0)">top</a>
+
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
 {% endblock content %}
