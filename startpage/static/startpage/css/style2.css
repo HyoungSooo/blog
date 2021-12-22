@@ -126,6 +126,8 @@ a {
 .projects {
   font-size: 30px;
   margin-top: 50px;
+  margin-right: 100px;
+  margin-bottom: 50px;
 }
 
 .about-me {
@@ -156,4 +158,18 @@ ul {
 }
 li {
   padding: 5px 0px;
+}
+
+.projects > p {
+  margin-bottom: 25px;
+}
+
+.projects_title {
+  margin-bottom: 3px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.projects_box {
+  padding-bottom: 5px;
 }

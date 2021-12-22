@@ -6,7 +6,6 @@ from .vaildator import check_the_code
 
 
 class PostForm(forms.ModelForm):
-    code = forms.CharField(max_length=10, validators=[check_the_code])
 
     class Meta:
         # model = 모델 클래스명  괄호는 뺄것

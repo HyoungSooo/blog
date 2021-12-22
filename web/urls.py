@@ -22,8 +22,13 @@ from . import views
 urlpatterns = [
     path('', include('startpage.urls')),
     path('index/', views.index, name='index'),
+    path('project-index/<int:pro_id>',
+         views.project_index, name='project_index'),
     path('create/', views.PageCreate.as_view(), name='post-create'),
-    path('post-detail/<int:post_id>', views.post_detail, name='post-detail'),
+    path('post-detail/<int:post_id>',
+         views.post_detail, name='post-detail'),
+    path('project-detail/<int:pro_id>/<int:post_id>',
+         views.project_detail, name='project-detail'),
     path('python/', views.python_list, name='python_list'),
     path('javascript/', views.javascript_list, name='javascript_list'),
     path('html/', views.html_list, name='html_list'),
@@ -32,4 +37,5 @@ urlpatterns = [
     path('react/', views.react_list, name='react_list'),
     path('DB/', views.DB_list, name='DB_list'),
     path('algorithm/', views.algorithm_list, name='algorithm_list'),
+    path('nodejs/', views.node_list, name='node_list'),
 ]

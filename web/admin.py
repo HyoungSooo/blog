@@ -1,6 +1,6 @@
 from django_summernote.admin import SummernoteModelAdmin
 from django.contrib import admin
-from .models import Post
+from .models import Post, Project, Project_content
 
 # Register your models here.
 
@@ -21,3 +21,5 @@ class SomeModelAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
 
 
 admin.site.register(Post, SomeModelAdmin)
+admin.site.register(Project, SomeModelAdmin)
+admin.site.register(Project_content, SomeModelAdmin)

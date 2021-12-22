@@ -13,10 +13,16 @@
 }
 .post-detail__content {
   margin: 50px 0px;
+  overflow-x: auto;
 }
 .post-detail__content p {
   margin-bottom: 5px;
+  overflow-x: auto;
 }
+.detail__content div {
+  margin-bottom: 5px;
+}
+
 .text-box {
   padding-bottom: 40px;
   border-bottom: 1px solid white;

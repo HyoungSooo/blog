@@ -2,26 +2,16 @@
 {% load static %}
 {% block content %}
   <div class="content__box">
-    <div class='content_select_box_container'>
-      <a class="content_select_box" href={% url 'index' %}>All post</a>
-      <a class="content_select_box" href={% url 'python_list' %}>python</a>
-      <a class="content_select_box" href={% url 'html_list' %}>html</a>
-      <a class="content_select_box" href={% url 'css_list' %}>css</a>
-      <a class="content_select_box" href={% url 'DB_list' %}>DB</a>
-      <a class="content_select_box" href={% url 'django_list' %}>django</a>
-      <a class="content_select_box" href={% url 'algorithm_list' %}>algorithm</a>
-      <a class="content_select_box" href={% url 'node_list' %}>Node.js</a>
-    </div>
     <ul>
       {% for obj in object %}
         <li>
-          <a href={% url 'post-detail' obj.id %}>
-            <h2 class='content__title'>{{obj.title}}</h2>
+          <a href={% url 'project-detail' obj.project_id.id obj.id %}>
+            <h2 class='content__title project_content_title'>{{obj.title}}</h2>
             <div class='content-title__box'>
               <div class="description">
-                <span class='content__category'>category :
+                {% comment %} <span class='content__category'>category :
                   {{obj.type}}
-                </span>
+                </span> {% endcomment %}
                 <div class='content__description'>
                   <p>{{obj.description}}</p>
                 </div>

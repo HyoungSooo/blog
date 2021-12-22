@@ -156,3 +156,23 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
+
+.content_create {
+  width: 720px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.content_title_type {
+  display: flex;
+  justify-content: space-between;
+}
+.content_create_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.project_content_title {
+  margin-bottom: 10px;
+}

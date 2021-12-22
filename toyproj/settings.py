@@ -57,6 +57,11 @@ SUMMERNOTE_CONFIG = {
         'codemirror': {
             'mode': 'htmlmixed',
             'lineNumbers': 'true',
+        },
+        'style': {
+            'margin_bottom': '5px',
+            'overflow-x': 'auto'
+
         }
     }
 }

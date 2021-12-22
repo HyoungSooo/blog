@@ -1,4 +1,4 @@
-from web.models import Post
+from web.models import Post, Project
 from django.shortcuts import render
 import os
 import sys
@@ -11,7 +11,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 def introduce(request):
     object = Post.objects.order_by('-dt_created')
     object_sub = object[:3]
-    return render(request, 'startpage/index.html', {'obj': object_sub})
+    pro = Project.objects.all()
+    return render(request, 'startpage/index.html', {'obj': object_sub, 'pro_obj': pro})
 
 
 def about(request):
